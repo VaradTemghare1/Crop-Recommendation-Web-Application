@@ -1,0 +1,143 @@
+<html>
+
+<head>
+    <title>
+        Crop Recommendation
+    </title>
+    <link rel="stylesheet" href="index.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+
+
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Yeseva+One" />
+    <link href='https://fonts.googleapis.com/css?family=Rubik' rel='stylesheet'>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+
+<body>
+
+    <div>
+        <img class="imtag" src="plant.png" alt="">
+    </div>
+
+
+    <div>
+        <h1>
+            Crop Recommendation
+        </h1>
+    </div>
+
+    <div>
+        <img class="im2" src="img10.jpg" alt="">
+    </div>
+
+    <div>
+        <p class="dis">
+            This web application is created in the wake of
+            helping the farmers get the best suited crop depending
+            on various parameters like Nitrogen, Phosphorous, Potassium,
+            Temperature, Rainfall, PH, Season and Humidity. Please enter
+            the parameters below and our ML model will predict crop with accuracy of 99%
+        </p>
+    </div>
+
+
+
+
+    <div>
+
+        <div class="inVal">
+
+
+            <p style="text-align: center;">
+            <form method="POST" action="/predict" text-align="center">
+
+
+
+
+                <div class="col-md-6">
+                    <label>Nitrogen :
+                        <input type="text" name="n">
+                    </label>
+                </div>
+
+                <div class="col-md-6">
+                    <label>Phosphorous :
+                        <input type="text" name="p">
+                    </label>
+                </div>
+
+                <div class="col-md-6">
+
+                    <label>Potassium :
+                        <input type="text" name="k">
+                    </label>
+                </div>
+
+                <div class="col-md-6">
+                    <label>Temperature :
+                        <input type="text" name="temperature">
+                    </label>
+                </div>
+                <div class="col-md-6">
+                    <label>Humidity :
+                        <input type="text" name="humidity">
+                    </label>
+                </div>
+
+                <div class="col-md-6">
+                    <label>PH :
+                        <input type="text" name="ph">
+                    </label>
+                </div>
+
+                <div class="col-md-6">
+                    <label>Rainfall :
+                        <input type="text" name="rainfall">
+                    </label>
+                </div>
+
+
+                <label for="season" class="lbl">Season :</label>
+                <select id="season" name="season">
+
+                    <option value="0">Autumn</option>
+                    <option value="1">Kharif</option>
+                    <option value="2">Rabi</option>
+                    <option value="3">Summer</option>
+                    <option value="4">Whole Year</option>
+                    <option value="5"> Winter</option>
+
+                </select>
+                </label>
+                <br>
+
+
+
+
+                <input class="btn-primary btx" type="submit">
+
+                <h2 color="white" size="5">
+                    {{ prediction_text }}
+
+                </h2>
+
+                <br>
+
+            </form>
+
+
+
+
+
+        </div>
+
+    </div>
+
+</body>
